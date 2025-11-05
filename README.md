@@ -29,8 +29,6 @@ Haven is a modern, minimalist furniture e-commerce store built with React, featu
 ### Development Tools
 
 - **ESLint** - Code linting
-- **PostCSS** - CSS processing
-- **Autoprefixer** - CSS vendor prefixing
 
 ## 📁 Project Structure
 
