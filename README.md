@@ -6,7 +6,7 @@ Haven is a modern, minimalist furniture e-commerce store built with React, featu
 
 ## 🚀 Live Demo
 
-[Add your live demo link here]
+[Haven](haven-bay.vercel.app)
 
 ## 🛠 Tech Stack
 
