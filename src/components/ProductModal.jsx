@@ -37,7 +37,7 @@ const ProductModal = () => {
       {isProductModalOpen && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -46,7 +46,7 @@ const ProductModal = () => {
           />
           
           {/* Modal */}
-          <motion.div
+          <motion.section
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
@@ -62,10 +62,10 @@ const ProductModal = () => {
               <X className="w-6 h-6" />
             </motion.button>
 
-            <div className="h-full flex flex-col lg:flex-row">
+            <section className="h-full flex flex-col lg:flex-row">
               {/* Image Gallery */}
-              <div className="lg:w-1/2 relative bg-gray-50">
-                <div className="relative h-64 lg:h-full">
+              <section className="lg:w-1/2 relative bg-gray-50">
+                <section className="relative h-64 lg:h-full">
                   <img
                     src={selectedProduct.images[currentImageIndex]}
                     alt={selectedProduct.name}
@@ -91,7 +91,7 @@ const ProductModal = () => {
                   )}
                   
                   {/* Image Indicators */}
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                  <section className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
                     {selectedProduct.images.map((_, index) => (
                       <button
                         key={index}
@@ -101,13 +101,13 @@ const ProductModal = () => {
                         }`}
                       />
                     ))}
-                  </div>
-                </div>
-              </div>
+                  </section>
+                </section>
+              </section>
 
               {/* Product Details */}
-              <div className="lg:w-1/2 p-8 flex flex-col">
-                <div className="flex-1">
+              <section className="lg:w-1/2 p-8 flex flex-col">
+                <section className="flex-1">
                   <h1 className="text-3xl font-light text-gray-800 mb-4">
                     {selectedProduct.name}
                   </h1>
@@ -121,9 +121,9 @@ const ProductModal = () => {
                   </p>
                   
                   {/* Features */}
-                  <div className="mb-6">
+                  <section className="mb-6">
                     <h3 className="font-light text-gray-800 mb-3">Features:</h3>
-                    <div className="flex flex-wrap gap-2">
+                    <section className="flex flex-wrap gap-2">
                       {selectedProduct.features.map((feature, index) => (
                         <span
                           key={index}
@@ -132,16 +132,16 @@ const ProductModal = () => {
                           {feature}
                         </span>
                       ))}
-                    </div>
-                  </div>
-                </div>
+                    </section>
+                  </section>
+                </section>
 
                 {/* Add to Cart Section */}
-                <div className="border-t border-white/20 pt-6">
+                <section className="border-t border-white/20 pt-6">
                   {/* Quantity Selector */}
-                  <div className="flex items-center justify-between mb-6">
+                  <section className="flex items-center justify-between mb-6">
                     <span className="font-light text-gray-700">Quantity:</span>
-                    <div className="flex items-center gap-4">
+                    <section className="flex items-center gap-4">
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
@@ -161,8 +161,8 @@ const ProductModal = () => {
                       >
                         <Plus className="w-4 h-4" />
                       </motion.button>
-                    </div>
-                  </div>
+                    </section>
+                  </section>
 
                   {/* Add to Cart Button */}
                   <motion.button
@@ -182,10 +182,10 @@ const ProductModal = () => {
                       : 'Out of Stock'
                     }
                   </motion.button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+                </section>
+              </section>
+            </section>
+          </motion.section>
         </>
       )}
     </AnimatePresence>

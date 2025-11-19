@@ -55,7 +55,7 @@ const ProductGrid = () => {
 
   return (
     <section className="py-16" id='catalog'>
-      <div className="container mx-auto px-4">
+      <section className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ const ProductGrid = () => {
         <FiltersPanel />
         
         <AnimatePresence mode="wait">
-          <motion.div
+          <motion.section
             key={JSON.stringify(filters) + sort}
             variants={containerVariants}
             initial="hidden"
@@ -77,19 +77,19 @@ const ProductGrid = () => {
             {filteredAndSortedProducts.map((product, index) => (
               <ProductCard key={product.id} product={product} index={index} />
             ))}
-          </motion.div>
+          </motion.section>
         </AnimatePresence>
         
         {filteredAndSortedProducts.length === 0 && (
-          <motion.div
+          <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-center py-16"
           >
             <p className="text-gray-500 text-lg">No products found matching your criteria.</p>
-          </motion.div>
+          </motion.section>
         )}
-      </div>
+      </section>
     </section>
   );
 };

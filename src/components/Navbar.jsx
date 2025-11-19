@@ -88,8 +88,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className="sticky top-0 z-50 backdrop-blur-md bg-white/70 border-b border-orange-300 shadow-lg"
     >
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <section className="container mx-auto px-4 py-4">
+        <section className="flex items-center justify-between">
           {/* Logo */}
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -103,7 +103,7 @@ const Navbar = () => {
           </motion.button>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <section className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <motion.button
                 key={item.id}
@@ -114,10 +114,10 @@ const Navbar = () => {
                 {item.label}
               </motion.button>
             ))}
-          </div>
+          </section>
 
           {/* Mobile menu button and cart */}
-          <div className="flex items-center gap-4">
+          <section className="flex items-center gap-4">
             {/* Cart Icon */}
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -146,35 +146,35 @@ const Navbar = () => {
             >
               <AnimatePresence mode="wait">
                 {isMobileMenuOpen ? (
-                  <motion.div
+                  <motion.section
                     key="close"
                     initial={{ rotate: -90, opacity: 0 }}
                     animate={{ rotate: 0, opacity: 1 }}
                     exit={{ rotate: 90, opacity: 0 }}
                   >
                     <X className="w-6 h-6 text-gray-700 hover:text-orange-500" />
-                  </motion.div>
+                  </motion.section>
                 ) : (
-                  <motion.div
+                  <motion.section
                     key="menu"
                     initial={{ rotate: 90, opacity: 0 }}
                     animate={{ rotate: 0, opacity: 1 }}
                     exit={{ rotate: -90, opacity: 0 }}
                   >
                     <Menu className="w-6 h-6 text-gray-700 hover:text-orange-500" />
-                  </motion.div>
+                  </motion.section>
                 )}
               </AnimatePresence>
             </motion.button>
-          </div>
-        </div>
+          </section>
+        </section>
 
         {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <>
               {/* Backdrop */}
-              <motion.div
+              <motion.section
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -183,14 +183,14 @@ const Navbar = () => {
               />
 
               {/* Mobile Menu Panel */}
-              <motion.div
+              <motion.section
                 variants={mobileMenuVariants}
                 initial="closed"
                 animate="open"
                 exit="closed"
                 className="absolute left-4 right-4 top-20 mt-2 bg-white/95 backdrop-blur-md rounded-2xl border border-white/20 shadow-2xl z-50 overflow-hidden md:hidden mobile-menu"
               >
-                <div className="p-4 space-y-2">
+                <section className="p-4 space-y-2">
                   {navItems.map((item, index) => (
                     <motion.button
                       key={item.id}
@@ -206,7 +206,7 @@ const Navbar = () => {
                   ))}
 
                   {/* Cart in mobile menu */}
-                  <motion.div
+                  <motion.section
                     variants={mobileMenuItemVariants}
                     initial="closed"
                     animate="open"
@@ -227,13 +227,13 @@ const Navbar = () => {
                         </span>
                       )}
                     </button>
-                  </motion.div>
-                </div>
-              </motion.div>
+                  </motion.section>
+                </section>
+              </motion.section>
             </>
           )}
         </AnimatePresence>
-      </div>
+      </section>
     </motion.nav>
   );
 };

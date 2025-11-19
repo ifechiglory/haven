@@ -20,7 +20,7 @@ const ProductCard = ({ product, index }) => {
     setQuantity(1);
   }
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -28,7 +28,7 @@ const ProductCard = ({ product, index }) => {
       className="group bg-white/70 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300"
     >
       {/* Image Container */}
-      <div className="relative overflow-hidden">
+      <section className="relative overflow-hidden">
         <motion.img
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.6 }}
@@ -38,10 +38,10 @@ const ProductCard = ({ product, index }) => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
+        <section className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300" />
 
         {/* Badges */}
-        <div className="absolute top-4 left-4 flex gap-2">
+        <section className="absolute top-4 left-4 flex gap-2">
           {product.isNew && (
             <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-light backdrop-blur-sm">
               New
@@ -58,7 +58,7 @@ const ProductCard = ({ product, index }) => {
               Out of Stock
             </span>
           )}
-        </div>
+        </section>
 
         {/* Quick View Button */}
         <motion.button
@@ -69,10 +69,10 @@ const ProductCard = ({ product, index }) => {
         >
           <Eye className="w-5 h-5 text-orange-800" />
         </motion.button>
-      </div>
+      </section>
 
       {/* Content */}
-      <div className="p-6">
+      <section className="p-6">
         <h3 className="text-xl font-light text-gray-800 mb-2">
           {product.name}
         </h3>
@@ -80,7 +80,7 @@ const ProductCard = ({ product, index }) => {
           {product.description}
         </p>
 
-        <div className="flex items-center justify-between">
+        <section className="flex items-center justify-between">
           <span className="text-2xl font-light text-orange-500">
             ${product.price}
           </span>
@@ -97,9 +97,9 @@ const ProductCard = ({ product, index }) => {
           >
             {product.inStock ? "Add to Cart" : "Out of Stock"}
           </motion.button>
-        </div>
-      </div>
-    </motion.div>
+        </section>
+      </section>
+    </motion.section>
   );
 };
 

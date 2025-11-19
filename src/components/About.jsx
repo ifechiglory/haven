@@ -23,8 +23,8 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="py-20 bg-white/50 backdrop-blur-sm">
-      <div className="container mx-auto px-4">
-        <motion.div
+      <section className="container mx-auto px-4">
+        <motion.section
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -38,58 +38,58 @@ const AboutSection = () => {
             your living spaces. Our minimalist designs are crafted to stand the
             test of time, both in quality and style.
           </p>
-        </motion.div>
+        </motion.section>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <motion.div
+            <motion.section
               key={feature.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="text-center p-6"
             >
-              <motion.div
+              <motion.section
                 whileHover={{ scale: 1.1 }}
                 className="w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4"
               >
                 <feature.icon className="w-8 h-8 text-orange-500" />
-              </motion.div>
+              </motion.section>
               <h3 className="text-xl font-light text-gray-800 mb-2">
                 {feature.title}
               </h3>
               <p className="text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
-            </motion.div>
+            </motion.section>
           ))}
-        </div>
+        </section>
 
         {/* Stats */}
-        <motion.div
+        <motion.section
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
         >
-          <div>
-            <div className="text-3xl font-light text-orange-500 mb-2">500+</div>
-            <div className="text-gray-600">Happy Customers</div>
-          </div>
-          <div>
-            <div className="text-3xl font-light text-orange-500 mb-2">3</div>
-            <div className="text-gray-600">Years Experience</div>
-          </div>
-          <div>
-            <div className="text-3xl font-light text-orange-500 mb-2">50+</div>
-            <div className="text-gray-600">Unique Designs</div>
-          </div>
-          <div>
-            <div className="text-3xl font-light text-orange-500 mb-2">24/7</div>
-            <div className="text-gray-600">Customer Support</div>
-          </div>
-        </motion.div>
-      </div>
+          <section>
+            <section className="text-3xl font-light text-orange-500 mb-2">500+</section>
+            <section className="text-gray-600">Happy Customers</section>
+          </section>
+          <section>
+            <section className="text-3xl font-light text-orange-500 mb-2">3</section>
+            <section className="text-gray-600">Years Experience</section>
+          </section>
+          <section>
+            <section className="text-3xl font-light text-orange-500 mb-2">50+</section>
+            <section className="text-gray-600">Unique Designs</section>
+          </section>
+          <section>
+            <section className="text-3xl font-light text-orange-500 mb-2">24/7</section>
+            <section className="text-gray-600">Customer Support</section>
+          </section>
+        </motion.section>
+      </section>
     </section>
   );
 };

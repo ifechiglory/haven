@@ -41,10 +41,10 @@ const Footer = () => {
       whileInView={{ opacity: 1 }}
       className="bg-white/70 backdrop-blur-md border-t border-white/20"
     >
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <section className="container mx-auto px-4 py-12">
+        <section className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
-          <div>
+          <section>
             <motion.h3
               whileHover={{ color: '#f97316' }}
               className="text-2xl font-light mb-4 text-gray-800 cursor-pointer"
@@ -55,12 +55,12 @@ const Footer = () => {
             <p className="text-gray-600 font-light leading-relaxed">
               Creating spaces that inspire peace and simplicity through minimalist furniture design.
             </p>
-          </div>
+          </section>
 
           {/* Quick Links */}
-          <div>
+          <section>
             <h4 className="font-light text-gray-800 mb-4">Quick Links</h4>
-            <div className="space-y-2">
+            <section className="space-y-2">
               {quickLinks.map((link) => (
                 <motion.button
                   key={link.id}
@@ -71,13 +71,13 @@ const Footer = () => {
                   {link.label}
                 </motion.button>
               ))}
-            </div>
-          </div>
+            </section>
+          </section>
 
           {/* Policies */}
-          <div>
+          <section>
             <h4 className="font-light text-gray-800 mb-4">Policies</h4>
-            <div className="space-y-2">
+            <section className="space-y-2">
               {policyLinks.map((link) => (
                 <motion.button
                   key={link.label}
@@ -88,20 +88,20 @@ const Footer = () => {
                   {link.label}
                 </motion.button>
               ))}
-            </div>
-          </div>
+            </section>
+          </section>
 
           {/* Contact & Social */}
-          <div>
+          <section>
             <h4 className="font-light text-gray-800 mb-4">Connect With Us</h4>
-            <div className="space-y-2 text-gray-600 font-light mb-4">
+            <section className="space-y-2 text-gray-600 font-light mb-4">
               <p>123 Design Street</p>
               <p>Creative City, CC 10001</p>
               <p>hello@haven.com</p>
               <p>+1 (555) 123-4567</p>
-            </div>
+            </section>
             
-            <div className="flex space-x-4">
+            <section className="flex space-x-4">
               {socialLinks.map((social, index) => (
                 <motion.a
                   key={social.label}
@@ -115,17 +115,17 @@ const Footer = () => {
                   <social.icon className="w-5 h-5" />
                 </motion.a>
               ))}
-            </div>
-          </div>
-        </div>
+            </section>
+          </section>
+        </section>
 
         {/* Copyright */}
-        <div className="border-t border-white/20 mt-8 pt-8 text-center">
+        <section className="border-t border-white/20 mt-8 pt-8 text-center">
           <p className="text-gray-600 font-light">
             © 2025 Haven. All rights reserved. Crafted with simplicity in mind.
           </p>
-        </div>
-      </div>
+        </section>
+      </section>
     </motion.footer>
   );
 };

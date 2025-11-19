@@ -50,8 +50,8 @@ const ContactSection = () => {
       id="contact"
       className="py-20 bg-linear-to-br from-gray-50 to-gray-100"
     >
-      <div className="container mx-auto px-4">
-        <motion.div
+      <section className="container mx-auto px-4">
+        <motion.section
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -64,11 +64,11 @@ const ContactSection = () => {
             Have questions about our furniture? Need design advice? We'd love to
             hear from you.
           </p>
-        </motion.div>
+        </motion.section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
-          <motion.div
+          <motion.section
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -88,43 +88,43 @@ const ContactSection = () => {
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-4 p-4 bg-white/70 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
+                <section className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
                   <method.icon className="w-6 h-6 text-orange-500" />
-                </div>
-                <div>
+                </section>
+                <section>
                   <h4 className="font-light text-gray-800">{method.title}</h4>
                   <p className="text-gray-600">{method.info}</p>
-                </div>
+                </section>
               </motion.a>
             ))}
 
             {/* Business Hours */}
-            <motion.div
+            <motion.section
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg"
             >
               <h4 className="font-light text-gray-800 mb-3">Business Hours</h4>
-              <div className="space-y-2 text-gray-600">
-                <div className="flex justify-between">
+              <section className="space-y-2 text-gray-600">
+                <section className="flex justify-between">
                   <span>Monday - Friday</span>
                   <span>9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
+                </section>
+                <section className="flex justify-between">
                   <span>Saturday</span>
                   <span>10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between">
+                </section>
+                <section className="flex justify-between">
                   <span>Sunday</span>
                   <span>Closed</span>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
+                </section>
+              </section>
+            </motion.section>
+          </motion.section>
 
           {/* Contact Form */}
-          <motion.div
+          <motion.section
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -135,7 +135,7 @@ const ContactSection = () => {
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
+              <section>
                 <label
                   htmlFor="name"
                   className="block text-gray-700 font-light mb-2"
@@ -152,9 +152,9 @@ const ContactSection = () => {
                   className="w-full bg-white/80 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 font-light focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all duration-300"
                   placeholder="Enter your name"
                 />
-              </div>
+              </section>
 
-              <div>
+              <section>
                 <label
                   htmlFor="email"
                   className="block text-gray-700 font-light mb-2"
@@ -171,9 +171,9 @@ const ContactSection = () => {
                   className="w-full bg-white/80 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 font-light focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all duration-300"
                   placeholder="Enter your email"
                 />
-              </div>
+              </section>
 
-              <div>
+              <section>
                 <label
                   htmlFor="message"
                   className="block text-gray-700 font-light mb-2"
@@ -190,7 +190,7 @@ const ContactSection = () => {
                   className="w-full bg-white/80 backdrop-blur-sm border border-white/20 rounded-2xl px-4 py-3 font-light focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all duration-300 resize-none"
                   placeholder="Tell us about your project or question..."
                 />
-              </div>
+              </section>
 
               <motion.button
                 type="submit"
@@ -202,9 +202,9 @@ const ContactSection = () => {
                 Send Message
               </motion.button>
             </form>
-          </motion.div>
-        </div>
-      </div>
+          </motion.section>
+        </section>
+      </section>
     </section>
   );
 };

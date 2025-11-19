@@ -15,7 +15,7 @@ const CartSidebar = () => {
       {isOpen && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -24,7 +24,7 @@ const CartSidebar = () => {
           />
           
           {/* Sidebar */}
-          <motion.div
+          <motion.section
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
@@ -32,8 +32,8 @@ const CartSidebar = () => {
             className="fixed right-0 top-0 h-full w-full max-w-md bg-white/90 backdrop-blur-md border-l border-white/20 shadow-2xl z-50 overflow-y-auto"
           >
             {/* Header */}
-            <div className="p-6 border-b border-white/20">
-              <div className="flex items-center justify-between">
+            <section className="p-6 border-b border-white/20">
+              <section className="flex items-center justify-between">
                 <h2 className="text-2xl font-light text-gray-800 flex items-center gap-2">
                   <ShoppingBag className="w-6 h-6" />
                   Your Cart
@@ -46,19 +46,19 @@ const CartSidebar = () => {
                 >
                   <X className="w-6 h-6" />
                 </motion.button>
-              </div>
-            </div>
+              </section>
+            </section>
 
             {/* Cart Items */}
-            <div className="p-6 space-y-4">
+            <section className="p-6 space-y-4">
               {items.length === 0 ? (
-                <div className="text-center py-12">
+                <section className="text-center py-12">
                   <ShoppingBag className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                   <p className="text-gray-500 text-lg">Your cart is empty</p>
-                </div>
+                </section>
               ) : (
                 items.map((item) => (
-                  <motion.div
+                  <motion.section
                     key={item.id}
                     layout
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -72,12 +72,12 @@ const CartSidebar = () => {
                       className="w-16 h-16 object-cover rounded-xl"
                     />
                     
-                    <div className="flex-1">
+                    <section className="flex-1">
                       <h3 className="font-light text-gray-800">{item.name}</h3>
                       <p className="text-orange-500 font-light">${item.price}</p>
-                    </div>
+                    </section>
                     
-                    <div className="flex items-center gap-2">
+                    <section className="flex items-center gap-2">
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
@@ -103,7 +103,7 @@ const CartSidebar = () => {
                       >
                         <Plus className="w-4 h-4" />
                       </motion.button>
-                    </div>
+                    </section>
                     
                     <motion.button
                       whileHover={{ scale: 1.1 }}
@@ -113,18 +113,18 @@ const CartSidebar = () => {
                     >
                       <X className="w-4 h-4" />
                     </motion.button>
-                  </motion.div>
+                  </motion.section>
                 ))
               )}
-            </div>
+            </section>
 
             {/* Footer */}
             {items.length > 0 && (
-              <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/20 bg-white/50 backdrop-blur-md">
-                <div className="flex justify-between items-center mb-4">
+              <section className="absolute bottom-0 left-0 right-0 p-6 border-t border-white/20 bg-white/50 backdrop-blur-md">
+                <section className="flex justify-between items-center mb-4">
                   <span className="text-lg font-light text-gray-800">Total:</span>
                   <span className="text-2xl font-light text-orange-500">${total.toFixed(2)}</span>
-                </div>
+                </section>
                 
                 <motion.button
                   whileHover={{ scale: 1.02, backgroundColor: '#ea580c' }}
@@ -137,9 +137,9 @@ const CartSidebar = () => {
                 >
                   Proceed to Checkout
                 </motion.button>
-              </div>
+              </section>
             )}
-          </motion.div>
+          </motion.section>
         </>
       )}
     </AnimatePresence>

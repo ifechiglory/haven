@@ -19,19 +19,17 @@ function AppContent() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100">
+    <section className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100">
       <Navbar />
-
-      {/* Main sections with IDs for navigation */}
       <section id="home">
         <Hero />
       </section>
 
       <About />
       <section id="catalog">
-        <div className="container mx-auto px-4 py-8">
+        <section className="container mx-auto px-4 py-8">
           <ProductGrid />
-        </div>
+        </section>
       </section>
       <Contact />
 
@@ -39,7 +37,7 @@ function AppContent() {
       <CartSidebar />
       <ProductModal />
       <CheckoutModal />
-    </div>
+    </section>
   );
 }
 

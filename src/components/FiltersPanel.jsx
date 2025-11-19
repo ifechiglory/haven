@@ -12,18 +12,18 @@ const FiltersPanel = () => {
   const colors = ['all', 'oak', 'walnut', 'white', 'black', 'gray', 'clear'];
 
   return (
-    <motion.div
+    <motion.section
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       className="bg-white/70 backdrop-blur-md rounded-2xl p-6 mb-8 border border-white/20 shadow-lg"
     >
-      <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
+      <section className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
         {/* Left side - Filters */}
-        <div className="flex flex-wrap gap-4 items-center">
-          <div className="flex items-center gap-2 text-gray-700">
+        <section className="flex flex-wrap gap-4 items-center">
+          <section className="flex items-center gap-2 text-gray-700">
             <Filter className="w-5 h-5" />
             <span className="font-light">Filters:</span>
-          </div>
+          </section>
           
           {/* Category Filter */}
           <select
@@ -52,16 +52,16 @@ const FiltersPanel = () => {
           </select>
           
           {/* Price Range */}
-          <div className="flex items-center gap-2">
+          <section className="flex items-center gap-2">
             <span className="font-light text-gray-700">Price:</span>
             <span className="text-orange-500 font-light">
               ${filters.priceRange[0]} - ${filters.priceRange[1]}
             </span>
-          </div>
-        </div>
+          </section>
+        </section>
         
         {/* Right side - Sort */}
-        <div className="flex items-center gap-4">
+        <section className="flex items-center gap-4">
           <span className="font-light text-gray-700">Sort by:</span>
           <select
             value={sort}
@@ -73,9 +73,9 @@ const FiltersPanel = () => {
             <option value="price-low">Price: Low to High</option>
             <option value="price-high">Price: High to Low</option>
           </select>
-        </div>
-      </div>
-    </motion.div>
+        </section>
+      </section>
+    </motion.section>
   );
 };
 
