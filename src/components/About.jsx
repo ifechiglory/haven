@@ -30,6 +30,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
+          
           <h2 className="text-4xl font-light text-gray-800 mb-4 underline decoration-orange-500">
             About Haven
           </h2>
